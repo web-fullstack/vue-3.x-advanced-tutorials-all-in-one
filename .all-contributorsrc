@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "xgqfrms",
+      "name": "xgqfrms",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7291672?v=4",
+      "profile": "https://www.xgqfrms.xyz",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "vue-3.x-advanced-tutorials-all-in-one",
+  "projectOwner": "web-fullstack",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
