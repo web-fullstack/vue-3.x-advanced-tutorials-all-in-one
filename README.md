@@ -20,7 +20,19 @@ $ vue -V
 # @vue/cli 4.5.6
 
 # vite
+$ npm create vite@latest
 
+$ yarn create vite
+
+$ pnpm create vite
+```
+
+```sh
+$ pnpm create vite
+# ...
+  cd vue-3-tutorials
+  pnpm install
+  pnpm run dev
 ```
 
 

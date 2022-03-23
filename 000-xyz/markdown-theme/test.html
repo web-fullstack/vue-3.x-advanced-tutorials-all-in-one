@@ -1,0 +1,82 @@
+<head>
+  <link rel="stylesheet" href="./test.css">
+</head>
+
+<body class="bytemd">
+
+  <section class="bytemd-preview">
+    <div class="markdown-body"><h2>Markdown Basic Syntax</h2>
+      <p>I just love <strong>bold text</strong>. Italicized text is the <em>cat's meow</em>. At the command prompt, type <code>nano</code>.</p>
+      <p>My favorite markdown editor is <a href="https://github.com/bytedance/bytemd">ByteMD</a>.</p>
+      <ol>
+      <li>First item</li>
+      <li>Second item</li>
+      <li>Third item</li>
+      </ol>
+      <blockquote>
+      <p>Dorothy followed her through many of the beautiful rooms in her castle.</p>
+      </blockquote>
+      <pre><code class="language-js">import { Editor, Viewer } from 'bytemd';
+      import gfm from '@bytemd/plugin-gfm';
+      
+      const plugins = [
+        gfm(),
+        // Add more plugins here
+      ];
+      
+      const editor = new Editor({
+        target: document.body, // DOM to render
+        props: {
+          value: '',
+          plugins,
+        },
+      });
+      
+      editor.on('change', (e) =&gt; {
+        editor.$set({ value: e.detail.value });
+      });
+      </code></pre>
+      <h2>GFM Extended Syntax</h2>
+      <p>Automatic URL Linking: <a href="https://github.com/bytedance/bytemd">https://github.com/bytedance/bytemd</a></p>
+      <p><del>The world is flat.</del> We now know that the world is round.</p>
+      <ul class="contains-task-list">
+      <li class="task-list-item"><input type="checkbox" checked="" disabled=""> Write the press release</li>
+      <li class="task-list-item"><input type="checkbox" disabled=""> Update the website</li>
+      <li class="task-list-item"><input type="checkbox" disabled=""> Contact the media</li>
+      </ul>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <table><thead><tr><th>Syntax</th><th>Description</th></tr></thead><tbody><tr><td>Header</td><td>Title</td></tr><tr><td>Paragraph</td><td>Text</td></tr></tbody></table>
+      <h2>Footnotes</h2>
+      <p>Here's a simple footnote,<sup id="user-content-fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup> and here's a longer one.<sup id="user-content-fnref-bignote"><a href="#fn-bignote" class="footnote-ref">bignote</a></sup></p>
+      <div class="footnotes">
+      <hr>
+      <ol>
+      <li id="user-content-fn-1">
+      <p>This is the first footnote.<a href="#fnref-1" class="footnote-backref">↩</a></p>
+      </li>
+      <li id="user-content-fn-bignote">
+      <p>Here's one with multiple paragraphs and code.</p>
+      <p>Indent paragraphs to include them in the footnote.</p>
+      <p><code>{ my code }</code></p>
+      <p>Add as many paragraphs as you like.<a href="#fnref-bignote" class="footnote-backref">↩</a></p>
+      </li>
+      </ol>
+      </div><!--1--></div>
+  </section>
+</body>
