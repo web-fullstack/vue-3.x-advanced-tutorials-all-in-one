@@ -15,10 +15,16 @@ $ npm -v
 
 ```
 
+https://cli.vuejs.org/zh/guide/
+
 ```sh
 $ vue -V
 # @vue/cli 4.5.6
+```
 
+https://vitejs.dev/guide/
+
+```sh
 # vite
 $ npm create vite@latest
 
