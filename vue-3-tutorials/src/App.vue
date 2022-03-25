@@ -1,6 +1,7 @@
 <template>
   <section>
     <img alt="Vue logo" src="./assets/logo.png" />
+    emoji<span>&#128123;</span>
     <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
   </section>
 </template>
