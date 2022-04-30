@@ -33,7 +33,8 @@ export default [
     //   name: 'iife-index',
     //   // fix: UMD export 报错 ✅
     //   extend: true,
-    //   // [!] Error: Given name "iife-index" is not a legal JS identifier. If you need this, you can try "output.extend: true".
+    //   // fix: "iife-index" is not a legal JS identifier 报错 ✅
+    //   // ❌ [!] Error: Given name "iife-index" is not a legal JS identifier. If you need this, you can try "output.extend: true".
     // },
     output: {
       file: './demo/dist/iife-index.js',
