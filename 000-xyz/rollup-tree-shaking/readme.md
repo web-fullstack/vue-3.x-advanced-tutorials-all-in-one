@@ -15,4 +15,10 @@ $ npm i -D rollup-plugin-vue
 # css plugin
 $ npm i -D rollup-plugin-css-only
 
+# uglify
+# $ npm i -D rollup-plugin-uglify
+# $ npm i -D rollup-plugin-uglify-es
+
+$ npm i -D rollup-plugin-terser
+
 ```

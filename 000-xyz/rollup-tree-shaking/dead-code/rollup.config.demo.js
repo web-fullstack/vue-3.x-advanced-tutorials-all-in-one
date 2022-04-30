@@ -1,4 +1,8 @@
 import vue from 'rollup-plugin-vue';
+// import uglify from 'rollup-plugin-uglify-es';
+// import uglify from 'rollup-plugin-terser';
+// [!] TypeError: uglify__default.default is not a function ❌
+import { terser } from 'rollup-plugin-terser';
 
 // 1. 仅构建一个 lib 使用 `export default {};`
 // export default {
@@ -19,6 +23,13 @@ export default [
   // 1. browser
   {
     input: 'demo/index.js',
+    output: {
+      file: './demo/dist/iife-index.js',
+      format: 'iife',
+      // external: ['vue']
+      name: 'iifeDemo',
+      // (!) If you do not supply "output.name", you may not be able to access the exports of an IIFE bundle.
+    },
     // output: {
     //   file: './demo/dist/iife-index.js',
     //   format: 'iife',
@@ -36,15 +47,11 @@ export default [
     //   // fix: "iife-index" is not a legal JS identifier 报错 ✅
     //   // ❌ [!] Error: Given name "iife-index" is not a legal JS identifier. If you need this, you can try "output.extend: true".
     // },
-    output: {
-      file: './demo/dist/iife-index.js',
-      format: 'iife',
-      // external: ['vue']
-      name: 'iifeDemo',
-    },
     plugins: [
-      vue(/* options */)
-    ]
+      vue(/* options */),
+      // uglify(),
+      terser(),
+    ],
   },
   // 2. webpack / rollup / script="module"
   {
@@ -55,7 +62,9 @@ export default [
       // external: ['vue']
     },
     plugins: [
-      vue(/* options */)
+      vue(/* options */),
+      // uglify(),
+      terser(),
     ]
   },
   // 3. Node.js SSR
@@ -81,7 +90,9 @@ export default [
       // fix: UMD export 报错 ✅
     },
     plugins: [
-      vue(/* options */)
+      vue(/* options */),
+      // uglify(),
+      terser(),
     ]
   },
   // 4. amd
