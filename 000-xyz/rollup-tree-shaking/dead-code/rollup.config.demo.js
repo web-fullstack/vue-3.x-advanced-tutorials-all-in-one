@@ -19,10 +19,27 @@ export default [
   // 1. browser
   {
     input: 'demo/index.js',
+    // output: {
+    //   file: './demo/dist/iife-index.js',
+    //   format: 'iife',
+    //   // external: ['vue']
+    //   name: 'iife-index',
+    //   // fix: UMD export 报错 ✅
+    // },
+    // output: {
+    //   file: './demo/dist/iife-index.js',
+    //   format: 'iife',
+    //   // external: ['vue']
+    //   name: 'iife-index',
+    //   // fix: UMD export 报错 ✅
+    //   extend: true,
+    //   // [!] Error: Given name "iife-index" is not a legal JS identifier. If you need this, you can try "output.extend: true".
+    // },
     output: {
       file: './demo/dist/iife-index.js',
       format: 'iife',
       // external: ['vue']
+      name: 'iifeDemo',
     },
     plugins: [
       vue(/* options */)
@@ -59,6 +76,8 @@ export default [
       file: './demo/dist/umd-index.js',
       format: 'umd',
       // external: ['vue']
+      name: 'umd-index',
+      // fix: UMD export 报错 ✅
     },
     plugins: [
       vue(/* options */)
