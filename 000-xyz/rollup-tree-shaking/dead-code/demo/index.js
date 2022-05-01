@@ -1,9 +1,23 @@
+// import * as mathAll from './math.js';
+// import mathAll from './math.js';
+// import math from './math.js';
+// // ✅  multi duplicate import
 
-import { sum, add, minus } from './math';
+// console.log('mathAll =', mathAll);
+// console.log('math =', math);
 
-// const result = sum(1, 2);
+// const result1 = mathAll.add(1, 2);
+// const result2 = math.add(1, 2);
+
+// console.log('result1 =', result1);
+// console.log('result2 =', result2);
+
+/*#__PURE__*/
+import { sum, add, minus } from './math.js';
+
 const result = add(1, 2);
-// const result = minus(3, 1);
+// // const result = sum(1, 2);
+// // const result = minus(3, 1);
 
 console.log('result =', result);
 

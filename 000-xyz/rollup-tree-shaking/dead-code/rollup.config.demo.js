@@ -1,7 +1,8 @@
 import vue from 'rollup-plugin-vue';
+// ❌
+// import { uglify } from 'rollup-plugin-uglify';
 // import uglify from 'rollup-plugin-uglify-es';
-// import uglify from 'rollup-plugin-terser';
-// [!] TypeError: uglify__default.default is not a function ❌
+// ✅
 import { terser } from 'rollup-plugin-terser';
 
 // 1. 仅构建一个 lib 使用 `export default {};`
@@ -53,18 +54,16 @@ export default [
       terser(),
     ],
   },
-  // 2. webpack / rollup / script="module"
+  // 2. webpack / rollup / script="module" ESM
   {
     input: 'demo/index.js',
     output: {
       file: './demo/dist/esm-index.js',
       format: 'esm',
-      // external: ['vue']
     },
     plugins: [
-      vue(/* options */),
-      // uglify(),
-      terser(),
+      vue(),
+      // terser(),
     ]
   },
   // 3. Node.js SSR
@@ -73,10 +72,9 @@ export default [
     output: {
       file: './demo/dist/cjs-index.js',
       format: 'cjs',
-      // external: ['vue']
     },
     plugins: [
-      vue(/* options */)
+      vue(),
     ]
   },
   // 4. umd
@@ -85,14 +83,12 @@ export default [
     output: {
       file: './demo/dist/umd-index.js',
       format: 'umd',
-      // external: ['vue']
       name: 'umd-index',
       // fix: UMD export 报错 ✅
     },
     plugins: [
-      vue(/* options */),
-      // uglify(),
-      terser(),
+      vue(),
+      // terser(),
     ]
   },
   // 4. amd
@@ -101,10 +97,9 @@ export default [
     output: {
       file: './demo/dist/amd-index.js',
       format: 'amd',
-      // external: ['vue']
     },
     plugins: [
-      vue(/* options */)
+      vue(),
     ]
   },
   // 5. system
@@ -113,10 +108,9 @@ export default [
     output: {
       file: './demo/dist/system-index.js',
       format: 'system',
-      // external: ['vue']
     },
     plugins: [
-      vue(/* options */)
+      vue(),
     ]
-  }
+  },
 ];

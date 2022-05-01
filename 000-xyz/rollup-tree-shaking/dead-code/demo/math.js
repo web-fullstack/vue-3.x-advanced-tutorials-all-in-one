@@ -3,8 +3,10 @@
 /*#__PURE__*/
 const sum = (a, b) => a + b;
 
+/*#__PURE__*/
 const add = (a, b) => a + b;
 
+/*#__PURE__*/
 const minus = (a, b) => a - b;
 
 
@@ -41,3 +43,4 @@ export {
 };
 
 export default math;
+// ✅  multi export (export default + export)
